@@ -1,26 +1,111 @@
 # Patas & Cia
 
-Site institucional e sistema de gestão de tutores e animais. Projeto acadêmico N695, cenário 1.
+Sistema web desenvolvido para o projeto da disciplina **N695 - Desenvolvimento de Plataformas Web**, da Universidade de Fortaleza.
 
-**[Leia as instruções completas de instalação e uso](LEIA-ME.md).**
+O projeto foi baseado no **Cenário 1 - Clínica veterinária de bairro**.
 
-Node.js 22.13 ou superior (recomendado: 24). Sem dependências externas para instalar. Banco de dados SQLite criado automaticamente.
+## Acessos
 
-```bash
-npm run seed  # opcional: dados fictícios de demonstração
-npm start
-```
+### Aplicação publicada
+https://kayodias-patas.alwaysdata.net
 
-Abra `http://localhost:3000`. No Windows, também é possível usar `INICIAR_WINDOWS.bat`.
+### Repositório
+https://github.com/kayodias-dot/patas-e-cia
 
-## Prévias
+---
 
-![Página inicial](docs/evidencias/01-inicio-desktop.png)
+## Sobre o projeto
 
-![Painel de gestão](docs/evidencias/03-painel-desktop.png)
+A Clínica Patas & Cia precisava substituir o controle manual de tutores e animais por uma solução web simples e organizada.
 
-## Documentação
+A aplicação permite gerenciar tutores e seus respectivos animais, mantendo o relacionamento entre as duas entidades e aplicando validações para evitar dados inválidos e exclusões indevidas.
 
-[Requisitos](docs/REQUISITOS.md) | [API](docs/API.md) | [Testes](docs/TESTES.md) | [Publicação](docs/PUBLICACAO.md) | [Modelo de entrega](docs/MODELO_ENTREGA.md) | [Referências visuais](docs/REFERENCIAS_VISUAIS.md)
+## Funcionalidades
 
-**Limites:** demonstração sem autenticação, apenas para dados fictícios. Ainda não publicado. O modelo de documentação precisa ser completado pela equipe. As fotos externas da referência devem ser substituídas por material próprio/licenciado ou removidas antes da publicação.
+### Tutores
+- Cadastrar tutor
+- Listar tutores
+- Pesquisar tutores
+- Editar tutor
+- Excluir tutor
+- Validar telefone
+- Impedir a exclusão de tutor que possua animais cadastrados
+
+### Animais
+- Cadastrar animal
+- Listar animais
+- Editar animal
+- Excluir animal
+- Vincular animal a um tutor
+- Visualizar os animais de cada tutor
+
+### Interface
+- Layout responsivo
+- Compatível com desktop e dispositivos móveis
+- Mensagens de sucesso e erro
+- Navegação entre área institucional e painel de gerenciamento
+- Painel com indicadores
+
+---
+
+## Tecnologias utilizadas
+
+### Front-end
+- HTML5
+- CSS3
+- JavaScript
+- Interface responsiva
+
+### Back-end
+- Node.js
+- JavaScript com ES Modules
+- API REST própria
+
+### Banco de dados
+- SQLite
+
+### Hospedagem
+- alwaysdata
+
+### Controle de versão
+- Git
+- GitHub
+
+---
+
+## Estrutura do projeto
+
+```text
+patas-e-cia/
+│
+├── public/
+│   ├── assets/
+│   ├── css/
+│   ├── js/
+│   ├── index.html
+│   └── painel.html
+│
+├── server/
+│   ├── app.mjs
+│   ├── database.mjs
+│   ├── errors.mjs
+│   ├── http.mjs
+│   ├── index.mjs
+│   ├── repository.mjs
+│   ├── security.mjs
+│   └── seed.mjs
+│
+├── database/
+│   └── schema.sql
+│
+├── data/
+│
+├── docs/
+│   └── evidencias/
+│
+├── tests/
+│
+├── package.json
+├── Dockerfile
+├── README.md
+└── INICIAR_WINDOWS.bat
