@@ -1,0 +1,407 @@
+
+> patas-e-cia@1.0.0 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# (node:2866) ExperimentalWarning: SQLite is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: HTTP API + real SQLite integration
+    # Subtest: Health endpoint
+    ok 1 - Health endpoint
+      ---
+      duration_ms: 12.96184
+      type: 'test'
+      ...
+    # Subtest: Starts with empty database
+    ok 2 - Starts with empty database
+      ---
+      duration_ms: 3.269137
+      type: 'test'
+      ...
+    # Subtest: Rejects write without CSRF
+    ok 3 - Rejects write without CSRF
+      ---
+      duration_ms: 10.002548
+      type: 'test'
+      ...
+    # Subtest: Rejects cross-origin write
+    ok 4 - Rejects cross-origin write
+      ---
+      duration_ms: 7.634873
+      type: 'test'
+      ...
+    # Subtest: Returns field errors for invalid phone
+    ok 5 - Returns field errors for invalid phone
+      ---
+      duration_ms: 7.692821
+      type: 'test'
+      ...
+    # Subtest: Creates tutor with normalized data
+    ok 6 - Creates tutor with normalized data
+      ---
+      duration_ms: 5.926116
+      type: 'test'
+      ...
+    # Subtest: Creates second tutor
+    ok 7 - Creates second tutor
+      ---
+      duration_ms: 5.619397
+      type: 'test'
+      ...
+    # Subtest: Creates related animal
+    ok 8 - Creates related animal
+      ---
+      duration_ms: 8.030614
+      type: 'test'
+      ...
+    # Subtest: Rejects animal referring to missing tutor
+    ok 9 - Rejects animal referring to missing tutor
+      ---
+      duration_ms: 4.998452
+      type: 'test'
+      ...
+    # Subtest: Blocks deletion of tutor with animals (409)
+    ok 10 - Blocks deletion of tutor with animals (409)
+      ---
+      duration_ms: 6.777839
+      type: 'test'
+      ...
+    # Subtest: Database foreign key also blocks direct deletion
+    ok 11 - Database foreign key also blocks direct deletion
+      ---
+      duration_ms: 0.574986
+      type: 'test'
+      ...
+    # Subtest: Lists animals by tutor
+    ok 12 - Lists animals by tutor
+      ---
+      duration_ms: 5.593655
+      type: 'test'
+      ...
+    # Subtest: Searches animal without accents
+    ok 13 - Searches animal without accents
+      ---
+      duration_ms: 4.019125
+      type: 'test'
+      ...
+    # Subtest: Searches tutor without accents
+    ok 14 - Searches tutor without accents
+      ---
+      duration_ms: 2.376183
+      type: 'test'
+      ...
+    # Subtest: Handles SQL-injection-like search as literal data
+    ok 15 - Handles SQL-injection-like search as literal data
+      ---
+      duration_ms: 2.755475
+      type: 'test'
+      ...
+    # Subtest: Escapes wildcard search
+    ok 16 - Escapes wildcard search
+      ---
+      duration_ms: 3.761204
+      type: 'test'
+      ...
+    # Subtest: Supports pagination
+    ok 17 - Supports pagination
+      ---
+      duration_ms: 3.052113
+      type: 'test'
+      ...
+    # Subtest: Validates pagination limit
+    ok 18 - Validates pagination limit
+      ---
+      duration_ms: 1.952426
+      type: 'test'
+      ...
+    # Subtest: Validates pagination syntax
+    ok 19 - Validates pagination syntax
+      ---
+      duration_ms: 2.783337
+      type: 'test'
+      ...
+    # Subtest: Validates species filter
+    ok 20 - Validates species filter
+      ---
+      duration_ms: 2.505042
+      type: 'test'
+      ...
+    # Subtest: Rejects nonexistent tutor filter
+    ok 21 - Rejects nonexistent tutor filter
+      ---
+      duration_ms: 2.529508
+      type: 'test'
+      ...
+    # Subtest: Updates tutor
+    ok 22 - Updates tutor
+      ---
+      duration_ms: 3.797505
+      type: 'test'
+      ...
+    # Subtest: Updates and transfers animal to another tutor
+    ok 23 - Updates and transfers animal to another tutor
+      ---
+      duration_ms: 3.664469
+      type: 'test'
+      ...
+    # Subtest: Now permits deletion of previous tutor
+    ok 24 - Now permits deletion of previous tutor
+      ---
+      duration_ms: 3.644241
+      type: 'test'
+      ...
+    # Subtest: Returns not found for deleted tutor
+    ok 25 - Returns not found for deleted tutor
+      ---
+      duration_ms: 3.094274
+      type: 'test'
+      ...
+    # Subtest: Persists records after restarting the server
+    ok 26 - Persists records after restarting the server
+      ---
+      duration_ms: 17.270222
+      type: 'test'
+      ...
+    # Subtest: Deletes animal and then its tutor
+    ok 27 - Deletes animal and then its tutor
+      ---
+      duration_ms: 15.43388
+      type: 'test'
+      ...
+    # Subtest: Rejects malformed JSON
+    ok 28 - Rejects malformed JSON
+      ---
+      duration_ms: 5.413221
+      type: 'test'
+      ...
+    # Subtest: Rejects non-object JSON
+    ok 29 - Rejects non-object JSON
+      ---
+      duration_ms: 2.012272
+      type: 'test'
+      ...
+    # Subtest: Rejects non-JSON content type
+    ok 30 - Rejects non-JSON content type
+      ---
+      duration_ms: 1.711514
+      type: 'test'
+      ...
+    # Subtest: Rejects unsupported API method
+    ok 31 - Rejects unsupported API method
+      ---
+      duration_ms: 1.736581
+      type: 'test'
+      ...
+    # Subtest: Rejects oversized form
+    ok 32 - Rejects oversized form
+      ---
+      duration_ms: 1.660461
+      type: 'test'
+      ...
+    # Subtest: Does not expose database files
+    ok 33 - Does not expose database files
+      ---
+      duration_ms: 1.634515
+      type: 'test'
+      ...
+    # Subtest: Does not expose server source
+    ok 34 - Does not expose server source
+      ---
+      duration_ms: 2.66175
+      type: 'test'
+      ...
+    # Subtest: Does not expose environment configuration
+    ok 35 - Does not expose environment configuration
+      ---
+      duration_ms: 1.944271
+      type: 'test'
+      ...
+    # Subtest: Serves HTML with protective headers
+    ok 36 - Serves HTML with protective headers
+      ---
+      duration_ms: 8.046441
+      type: 'test'
+      ...
+    1..36
+ok 1 - HTTP API + real SQLite integration
+  ---
+  duration_ms: 240.046816
+  type: 'suite'
+  ...
+# Subtest: Tutor: normalizes phone, trims text and ignores unknown fields
+ok 2 - Tutor: normalizes phone, trims text and ignores unknown fields
+  ---
+  duration_ms: 3.959237
+  type: 'test'
+  ...
+# Subtest: Phone: landline with DDD
+ok 3 - Phone: landline with DDD
+  ---
+  duration_ms: 0.424322
+  type: 'test'
+  ...
+# Subtest: Phone: international +55 format
+ok 4 - Phone: international +55 format
+  ---
+  duration_ms: 0.269303
+  type: 'test'
+  ...
+# Subtest: Phone: rejects ""
+ok 5 - Phone: rejects ""
+  ---
+  duration_ms: 0.72667
+  type: 'test'
+  ...
+# Subtest: Phone: rejects "123"
+ok 6 - Phone: rejects "123"
+  ---
+  duration_ms: 0.539459
+  type: 'test'
+  ...
+# Subtest: Phone: rejects "texto"
+ok 7 - Phone: rejects "texto"
+  ---
+  duration_ms: 0.184915
+  type: 'test'
+  ...
+# Subtest: Phone: rejects "(00) 90000-0101"
+ok 8 - Phone: rejects "(00) 90000-0101"
+  ---
+  duration_ms: 0.22864
+  type: 'test'
+  ...
+# Subtest: Phone: rejects "8599999999"
+ok 9 - Phone: rejects "8599999999"
+  ---
+  duration_ms: 0.097972
+  type: 'test'
+  ...
+# Subtest: Phone: rejects "859000000000"
+ok 10 - Phone: rejects "859000000000"
+  ---
+  duration_ms: 0.917483
+  type: 'test'
+  ...
+# Subtest: Phone: rejects "85<900000101"
+ok 11 - Phone: rejects "85<900000101"
+  ---
+  duration_ms: 0.965776
+  type: 'test'
+  ...
+# Subtest: Tutor: required name and phone
+ok 12 - Tutor: required name and phone
+  ---
+  duration_ms: 0.293799
+  type: 'test'
+  ...
+# Subtest: Tutor: rejects malformed email
+ok 13 - Tutor: rejects malformed email
+  ---
+  duration_ms: 0.354744
+  type: 'test'
+  ...
+# Subtest: Tutor: accepts empty optional fields
+ok 14 - Tutor: accepts empty optional fields
+  ---
+  duration_ms: 0.22309
+  type: 'test'
+  ...
+# Subtest: Tutor: rejects object as name
+ok 15 - Tutor: rejects object as name
+  ---
+  duration_ms: 0.285181
+  type: 'test'
+  ...
+# Subtest: Tutor: rejects excessive length
+ok 16 - Tutor: rejects excessive length
+  ---
+  duration_ms: 0.122231
+  type: 'test'
+  ...
+# Subtest: Animal: accepts minimal valid record
+ok 17 - Animal: accepts minimal valid record
+  ---
+  duration_ms: 0.266944
+  type: 'test'
+  ...
+# Subtest: Animal: accepts decimal comma
+ok 18 - Animal: accepts decimal comma
+  ---
+  duration_ms: 0.192656
+  type: 'test'
+  ...
+# Subtest: Animal: rejects empty name
+ok 19 - Animal: rejects empty name
+  ---
+  duration_ms: 0.104562
+  type: 'test'
+  ...
+# Subtest: Animal: rejects absent tutor
+ok 20 - Animal: rejects absent tutor
+  ---
+  duration_ms: 0.070121
+  type: 'test'
+  ...
+# Subtest: Animal: rejects array as tutor
+ok 21 - Animal: rejects array as tutor
+  ---
+  duration_ms: 0.063928
+  type: 'test'
+  ...
+# Subtest: Animal: rejects invalid species
+ok 22 - Animal: rejects invalid species
+  ---
+  duration_ms: 0.058146
+  type: 'test'
+  ...
+# Subtest: Animal: rejects zero weight
+ok 23 - Animal: rejects zero weight
+  ---
+  duration_ms: 0.310751
+  type: 'test'
+  ...
+# Subtest: Animal: rejects negative weight
+ok 24 - Animal: rejects negative weight
+  ---
+  duration_ms: 0.102533
+  type: 'test'
+  ...
+# Subtest: Animal: rejects future birth date
+ok 25 - Animal: rejects future birth date
+  ---
+  duration_ms: 1.119262
+  type: 'test'
+  ...
+# Subtest: Animal: rejects impossible birth date
+ok 26 - Animal: rejects impossible birth date
+  ---
+  duration_ms: 0.951081
+  type: 'test'
+  ...
+# Subtest: Animal: accepts leap-day birth date
+ok 27 - Animal: accepts leap-day birth date
+  ---
+  duration_ms: 0.094577
+  type: 'test'
+  ...
+# Subtest: Animal: rejects array as sex
+ok 28 - Animal: rejects array as sex
+  ---
+  duration_ms: 0.496897
+  type: 'test'
+  ...
+# Subtest: Search: accent-insensitive normalization
+ok 29 - Search: accent-insensitive normalization
+  ---
+  duration_ms: 0.198773
+  type: 'test'
+  ...
+1..29
+# tests 64
+# suites 1
+# pass 64
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 392.491263
